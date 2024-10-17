@@ -12,7 +12,7 @@ class IntroApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter Home'),
+          title: const Text('Flutter Home page'),
           backgroundColor: Colors.blue,
         ),
         body: const Center(
