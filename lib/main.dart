@@ -17,7 +17,7 @@ class IntroApp extends StatelessWidget {
         ),
         body: const Center(
           child: Text(
-            'Welcome to flutter home page, now  its time to practice flutter widgets',
+            "Welcome to flutter home page. It's time to practice flutter widgets. Now go for practice",
             textAlign: TextAlign.justify,
             maxLines: 1,
             style: TextStyle(
