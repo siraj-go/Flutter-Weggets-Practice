@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
           onTap: (){
             print('Single tap');
           },
-          child: Text('Tap Here'),
+          child: Text('Tap'),
         ),
       ),
     );
