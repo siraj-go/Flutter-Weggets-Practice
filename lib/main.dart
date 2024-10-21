@@ -9,26 +9,71 @@ class IntroApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Home'),
-          backgroundColor: Colors.blue,
+    return const MaterialApp(
+      debugShowCheckedModeBanner: true,
+      home: Home(),
+      title: 'IntroApp',
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.lightGreen[300],
+      appBar: AppBar(
+        title: const Text(
+          'Home',
         ),
-        body: const Center(
-          child: Text(
-            "Welcome to flutter home page. It's time to practice flutter widgets. Now go for practice",
-            textAlign: TextAlign.justify,
-            maxLines: 1,
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.underline,
-              letterSpacing: 3,
-              wordSpacing: 3,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        // child: Image.asset(
+        //     'C:/Users/siraj/StudioProjects/one_app/assets/images/my_workstation.jpg',
+        //   height: 450,
+        //   width: 300,
+        //   fit: BoxFit.cover,
+        // ),
+        // child: Icon(
+        //   Icons.android,
+        //   size: 100,
+        //   color: Colors.green,
+        // ),
+        //  child: GestureDetector(
+        //    onDoubleTap: (){
+        //      print('double Tap');
+        //    },
+        //    onTap: (){
+        //      print('Single Tap');
+        //    },
+        //    child: Text('Tap Here'),
+        //  ),
+        // child: ElevatedButton(
+        //   onPressed:(){
+        //     print('Button pressed');
+        //   },
+        //   child: Text('Notification'),
+        // ),
+        // child: IconButton(
+        //   onPressed: (){
+        //     print('Add');
+        //   },
+        //   icon: Icon(Icons.add),
+        // ),
+        // child: TextButton(
+        //   onPressed: () {
+        //     print('Pressed');
+        //   },
+        //   child: Text('Tap Here'),
+        // ),
+        child: InkWell(
+          onTap: (){
+            print('Single tap');
+          },
+          child: Text('Tap Here'),
         ),
       ),
     );
