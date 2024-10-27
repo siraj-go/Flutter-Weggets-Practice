@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const IntroApp());
-}
+void main() => runApp(const IntroApp());
 
 class IntroApp extends StatelessWidget {
   const IntroApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: true,
       home: Home(),
       title: 'IntroApp',
@@ -19,62 +17,112 @@ class IntroApp extends StatelessWidget {
 
 class Home extends StatelessWidget {
   const Home({super.key});
+  
+MySnackBar(message, context) {
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(message))
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[300],
       appBar: AppBar(
-        title: const Text(
-          'Home',
-        ),
-        backgroundColor: Colors.blue,
+        actions: [
+          IconButton(onPressed: () {MySnackBar('This is home', context);}, icon: Icon(Icons.settings)),
+        ],
+        title: Text('Fluttter Demo Home'),
+        backgroundColor: Colors.blue[300],
+        centerTitle: true,
       ),
-      body: Center(
-        // child: Image.asset(
-        //     'C:/Users/siraj/StudioProjects/one_app/assets/images/my_workstation.jpg',
-        //   height: 450,
-        //   width: 300,
-        //   fit: BoxFit.cover,
-        // ),
-        // child: Icon(
-        //   Icons.android,
-        //   size: 100,
-        //   color: Colors.green,
-        // ),
-        //  child: GestureDetector(
-        //    onDoubleTap: (){
-        //      print('double Tap');
-        //    },
-        //    onTap: (){
-        //      print('Single Tap');
-        //    },
-        //    child: Text('Tap Here'),
-        //  ),
-        // child: ElevatedButton(
-        //   onPressed:(){
-        //     print('Button pressed');
-        //   },
-        //   child: Text('Notification'),
-        // ),
-        // child: IconButton(
-        //   onPressed: (){
-        //     print('Add');
-        //   },
-        //   icon: Icon(Icons.add),
-        // ),
-        // child: TextButton(
-        //   onPressed: () {
-        //     print('Pressed');
-        //   },
-        //   child: Text('Tap Here'),
-        // ),
-        child: InkWell(
-          onTap: (){
-            print('Single tap');
-          },
-          child: Text('Tap'),
+      /*body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextButton(
+              onPressed: () {
+                print('The text is Pressed');
+              },
+              child: Text('Tap Here'),
+            ),
+            IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+            ElevatedButton(onPressed: (){MySnackBar('Done', context);}, child: Text('Done it')),
+            TextButton(
+              onPressed: () {
+                print('The text is Pressed');
+              },
+              child: Text('Tap Here'),
+            ),
+            IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+            ElevatedButton(onPressed: (){MySnackBar('Done', context);}, child: Text('Done it')),TextButton(
+              onPressed: () {
+                print('The text is Pressed');
+              },
+              child: Text('Tap Here'),
+            ),
+            IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+            ElevatedButton(onPressed: (){MySnackBar('Done', context);}, child: Text('Done it')),TextButton(
+              onPressed: () {
+                print('The text is Pressed');
+              },
+              child: Text('Tap Here'),
+            ),
+            IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+            ElevatedButton(onPressed: (){MySnackBar('Done', context);}, child: Text('Done it')),TextButton(
+              onPressed: () {
+                print('The text is Pressed');
+              },
+              child: Text('Tap Here'),
+            ),
+            IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+            ElevatedButton(onPressed: (){MySnackBar('Done', context);}, child: Text('Done it')),TextButton(
+              onPressed: () {
+                print('The text is Pressed');
+              },
+              child: Text('Tap Here'),
+            ),
+
+          ],
         ),
+      )*/
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Column(
+                children: [
+                  Text('Column 1 '),
+                  Text('Column 1 '),
+                ],
+              ),
+              Column(
+                children: [
+                  Text('Column 2 '),
+                  Text('Column 2 '),
+                  Row(
+                    children: [
+                      Text('Row 1 Col 2 '),
+                      Text('Row 1 Col 2 '),
+                      Text('Row 1 Col 2 '),
+                      Text('Row 1 Col 2 '),
+                      Text('Row 1 Col 2 '),
+
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Text('Column 3 '),
+                  Text('Column 3 '),
+                ],
+              ),
+            ],
+          ),
       ),
     );
   }
